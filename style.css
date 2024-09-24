@@ -1,0 +1,220 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+   img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  } 
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+body {
+    font-family: "Poppins", sans-serif;
+   
+}
+
+  .main {
+    width: 100%;
+  }
+
+.grid-container {
+    width: 1110px;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(6, 110px);
+    grid-gap: 30px;
+    margin: 0 auto;
+    
+  }
+
+.item1 {
+    grid-row: span 2;
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 200;
+    color: #4D4F62;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #4D4F62;
+}
+
+#first-p {
+    font-size: 15px;
+    margin-top: 16px;
+    font-weight: 200;
+    color: #4D4F62;
+    
+}
+
+.p-container {
+    width: 540px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-left: 32px;
+}
+
+.item p {
+    font-size: 13px;
+    font-weight: 200;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 6px;
+    color: #4D4F62
+}
+
+
+.item {
+    position: relative;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 254px;
+    top: 154px;
+}
+
+.item2 {
+    grid-row: span 2;
+    border-top: 4px solid hsl(0, 78%, 62%);
+    border-radius: 2%;
+    box-shadow: 3px 5px 20px #d2e4e9;
+}
+
+.item3 {
+    grid-row: span 2;
+    border-top: 4px solid hsl(180, 62%, 55%);
+    border-radius: 2%;
+    box-shadow: 3px 5px 20px #d2e4e9;
+}
+
+.item4 {
+    grid-row: span 2;
+    border-top: 4px solid hsl(212, 86%, 64%);
+    border-radius: 2%;
+    box-shadow: 3px 5px 20px #d2e4e9;
+}
+
+.item5 {
+    grid-row: span 2;
+    border-top: 4px solid hsl(34, 97%, 64%);
+    border-radius: 2%;
+    box-shadow: 3px 5px 20px #d2e4e9 ;
+}
+
+@media only screen and (max-width: 375px) {
+    .grid-container {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .p-container {
+        width: 100%;
+      }
+
+      #first-p {
+        margin-top: 16px;
+        margin-left: 0;
+        padding: 0 5px;
+      }
+
+      h1,h2 {font-size: 1.5rem;}
+
+      h1 {margin-top: 85px;}
+
+      .item2, .item3, .item4, .item5 {
+        width: 311px;
+        height: 222px;
+      }
+
+      img {
+        width: 57px;
+        height: 57px;
+        position: absolute;
+        left: 226px;
+        top: 137px;
+    }
+
+    .non-item {
+        display: none;
+    }
+
+    .item2 {
+        order: 2;
+    }
+
+    .item3 {
+        order: 1;
+        margin-top: 56px;
+    }
+
+    .item5 {
+        order: 3;
+    }
+
+    .item4 {
+        order: 4;
+        margin-bottom: 78px;
+    }
+
+    .item p {
+        font-size: 13px;
+    }
+}
